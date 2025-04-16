@@ -2,10 +2,18 @@
 ## Aim:
   To develop a smart contract for issuing and verifying academic certificates on Ethereum, preventing forgery and ensuring authenticity.
 ## Algorithm:
-1. Deploy a smart contract where universities can issue certificates.
-2. Store a hash of certificate data on-chain.
-3. Provide a verification function that checks certificate authenticity.
-4. Users can verify the certificate by comparing the stored hash.
+Issuer Creates Certificate: Generate and digitally sign the certificate.
+
+Store Hash on Blockchain: Store the certificate’s hash and metadata on a decentralized ledger.
+
+Verifier Retrieves Hash: The verifier checks the blockchain for the certificate hash.
+
+Compare Hashes: If the retrieved hash matches, the certificate is valid; otherwise, it's invalid or tampered.
+
+Revalidation (Optional): Check for updates or revocations on the blockchain.
+
+This process ensures secure, decentralized verification.
+
 ## Program:
 ```
 // SPDX-License-Identifier: MIT
@@ -30,14 +38,22 @@ return certificates[certHash];
 }
 ```
 # Expected Output:
-```
-● When the university issues a certificate, it gets stored as a hash.
-● A student or employer can verify the certificate by entering the details.
-● If valid, it returns true; otherwise, false.
-High-Level Overview:
-● Used to prevent fake certificates.
-● Enables quick verification by employers or other institutions.
-● Shows how blockchain can be used in education and credential verification.
-```
-# Result:
 
+
+![image](https://github.com/user-attachments/assets/c02371f3-1bd0-4157-b612-b28c0f9da42b)
+
+Issuer Creates Certificate: Generate and digitally sign the certificate.
+
+Store Hash on Blockchain: Store the certificate’s hash and metadata on a decentralized ledger.
+
+Verifier Retrieves Hash: The verifier checks the blockchain for the certificate hash.
+
+Compare Hashes: If the retrieved hash matches, the certificate is valid; otherwise, it's invalid or tampered.
+
+Revalidation (Optional): Check for updates or revocations on the blockchain.
+
+This process ensures secure, decentralized verification.
+
+
+# Result:
+The certificate is correct if its hash matches the one stored on the blockchain, and it is not revoked or expired.
