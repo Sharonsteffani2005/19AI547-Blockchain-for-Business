@@ -1,17 +1,13 @@
 # Aim:
 To develop a smart contract that tracks the supply chain of luxury goods, ensuring authenticity.
 # Algorithm:
-The manufacturer records product creation details on-chain.
+Step 1: The manufacturer records product creation details on-chain.
 
+Step 2: The product moves through different supply chain checkpoints.
 
-The product moves through different supply chain checkpoints.
+Step 3: The ownership of the product can be transferred securely.
 
-
-The ownership of the product can be transferred securely.
-
-
-Buyers can verify the product’s authenticity.
-
+Step 4: Buyers can verify the product’s authenticity.
 
 # Program:
 ```
@@ -48,21 +44,23 @@ contract LuxurySupplyChain {
     }
 }
 ```
-# Expected Output:
-A luxury good (e.g., a Rolex watch) is registered on-chain.
+# EXPECTED OUTPUT:
 
+A luxury good (e.g., a Rolex watch) is registered on-chain. 
+
+![Screenshot 2025-04-22 120101](https://github.com/user-attachments/assets/640221ff-9555-44ae-a2fc-69faeeb48b0e)
 
 Ownership is transferred at every checkpoint.
+![Screenshot 2025-04-22 120506](https://github.com/user-attachments/assets/8dcb991f-d98a-4b8a-8a1d-2f8edd144b8b)
 
+Buyers can check the authenticity before purchasing
+![Screenshot 2025-04-22 120556](https://github.com/user-attachments/assets/a6f50888-7fbe-48e6-88ad-a5afe56a4826)
 
-Buyers can check the authenticity before purchasing.
+# HIGH LEVEL OVERVIEW:
 
-
-# High-Level Overview:
 Helps prevent counterfeit luxury goods.
-
 
 Teaches real-world supply chain use cases.
 
 # RESULT : 
-
+Thus, smart contract that tracks the supply chain of luxury goods, ensuring authenticity has been created and successfully executed.
