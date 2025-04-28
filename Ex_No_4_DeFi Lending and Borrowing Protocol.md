@@ -4,30 +4,30 @@ To build a decentralized lending protocol where users can deposit assets to earn
 
 # Algorithm:
 Step 1: Setup Lending and Borrowing Mechanism
-Users deposit ETH into the contract as liquidity.
+Step 2 : Users deposit ETH into the contract as liquidity.
 
 
-Depositors receive interest based on their deposits.
+Step3: Depositors receive interest based on their deposits.
 
 
-Borrowers can borrow ETH but must provide collateral (e.g., 150% of the borrowed amount).
+Step4: Borrowers can borrow ETH but must provide collateral (e.g., 150% of the borrowed amount).
 
 
-Interest on borrowed funds is calculated dynamically based on utilization rate.
+Step5:Interest on borrowed funds is calculated dynamically based on utilization rate.
 
 
-Step 2: Implement Overcollateralization
+Step6: Implement Overcollateralization
 If a borrower’s collateral value drops below a certain liquidation threshold, their collateral is liquidated to repay the debt.
 
 
-Step 3: Allow Liquidation
+Step7: Allow Liquidation
 If collateral < liquidation threshold, liquidators can repay the borrower's debt and claim their collateral at a discount.
 
 
 
 Program:
 ```
-// SPDX-License-Identifier: MIT
+//SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
 contract DeFiLending {
@@ -53,11 +53,16 @@ contract DeFiLending {
     }
 
     function borrow(uint256 amount) public payable {
-        require(msg.value >= (amount * liquidationThreshold) / 100, "Not enough collateral");
+        require(msg.value >= (amount * liquidationThreshold) / 100, "Nota enough collateral");
         borrowed[msg.sender] += amount;
         collateral[msg.sender] += msg.value;
         payable(msg.sender).transfer(amount);
         emit Borrowed(msg.sender, amount, msg.value);
+    }
+    function reduceCollateral(address user, uint256 amount) public {
+    require(msg.sender == owner, "Only owner can reduce");
+    require(collateral[user] >= amount, "Not enough collateral to reduce");
+    collateral[user] -= amount;
     }
 
     function liquidate(address borrower) public {
@@ -71,16 +76,20 @@ contract DeFiLending {
         emit Liquidated(borrower, debt, seizedCollateral);
     }
 }
-
 ```
 # Expected Output:
 Users can deposit ETH and earn interest.
+![WhatsApp Image 2025-04-28 at 13 31 00_93af21f8](https://github.com/user-attachments/assets/f111b97b-94c1-4e2b-9329-7ec44cdcbb69)
+
 
 
 Users can borrow ETH by providing collateral.
+![WhatsApp Image 2025-04-28 at 13 31 48_d41e4546](https://github.com/user-attachments/assets/62516ea6-8671-47cd-b791-a046b8588b6f)
+
 
 
 If collateral < 150% of borrowed amount, liquidators can seize the collateral.
+![image](https://github.com/user-attachments/assets/31b0f9f7-7af3-4b11-973f-515e5a0753a4)
 
 
 
@@ -94,4 +103,4 @@ Introduces risk management: overcollateralization and liquidation.
 Directly related to DeFi protocols like Aave and Compound.
 
 # RESULT : 
-
+Thus,DeFi Lending and Borrowing Protocol has been created and successfully executed
