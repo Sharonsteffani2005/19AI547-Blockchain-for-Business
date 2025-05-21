@@ -158,4 +158,5 @@ Prevents vote tampering while maintaining voter privacy.
 
 Mimics real-world ZK voting applications in governance and DAOs.
 
-# RESULT: To implement a fully private and transparent voting system using Zero-Knowledge Proofs (ZKPs). This ensures that votes are counted fairly without revealing who voted for whom is excecuted successfully.
+# RESULT:
+To implement a fully private and transparent voting system using Zero-Knowledge Proofs (ZKPs). This ensures that votes are counted fairly without revealing who voted for whom is excecuted successfully.
